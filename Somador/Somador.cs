@@ -38,14 +38,8 @@ namespace Somador
 
         private void bRemover_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < lstValores.Items.Count; i++)
-            {
-                if (lstValores.GetSelected(i))
-                {
-                    lstValores.Items.RemoveAt(i);
-                    break;
-                }
-            }
+            if (lstValores.SelectedIndex != -1)
+                lstValores.Items.RemoveAt(lstValores.SelectedIndex);
         }
 
         private void tValor_KeyDown(object sender, KeyEventArgs e)
