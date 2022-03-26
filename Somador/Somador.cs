@@ -19,26 +19,19 @@ namespace Somador
 
             lSomaTotal.ResetText();
             lSomaMarcados.ResetText();
-            lErro.ResetText();
+
+            tValor.ResetText();
+            tValor.Focus();
         }
         private void bSomar_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < lstValores.Items.Count; i++)
             {
-                try
-                {
-                    float v = float.Parse(lstValores.Items[i].ToString());
-                    if (lstValores.GetItemChecked(i))
-                        SomaMarcados += v;
+                float v = float.Parse(lstValores.Items[i].ToString());
+                if (lstValores.GetItemChecked(i))
+                    SomaMarcados += v;
 
-                    SomaTotal += v;
-                } catch
-                {
-                    //lstValores.Items.Clear();
-                    lErro.Text = $"O valor '{lstValores.Items[i]}' não é um número válido";
-                    lstValores.SetSelected(i, true);
-                    return;
-                }
+                SomaTotal += v;
             }
 
             lSomaTotal.Text = "A soma total dos valores é " + SomaTotal;
@@ -69,7 +62,9 @@ namespace Somador
 
         private void bAdicionar_Click(object sender, EventArgs e)
         {
-            lstValores.Items.Add(tValor.Text);
+            if (tValor.Text != string.Empty)
+                lstValores.Items.Add(tValor.Text);
+
             tValor.ResetText();
             tValor.Focus();
         }
