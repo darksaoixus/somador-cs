@@ -16,12 +16,6 @@ namespace Somador
         public Somador()
         {
             InitializeComponent();
-
-            lSomaTotal.ResetText();
-            lSomaMarcados.ResetText();
-
-            tValor.ResetText();
-            tValor.Focus();
         }
         private void bSomar_Click(object sender, EventArgs e)
         {
@@ -58,6 +52,14 @@ namespace Somador
         {
             if (e.KeyCode == Keys.Enter)
                 bAdicionar_Click(sender, e);
+        }
+
+        private void Somador_Load(object sender, EventArgs e)
+        {
+            lSomaTotal.ResetText();
+            lSomaMarcados.ResetText();
+
+            tValor.ResetText();
         }
 
         private void bAdicionar_Click(object sender, EventArgs e)

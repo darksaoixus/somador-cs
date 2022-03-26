@@ -129,6 +129,7 @@ namespace Somador
             this.Controls.Add(this.bAdicionar);
             this.Name = "Somador";
             this.Text = "Somador";
+            this.Load += new System.EventHandler(this.Somador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tValor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
