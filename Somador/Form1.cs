@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Somador
 {
-    public partial class Form1 : Form
+    public partial class Somador : Form
     {
         private float SomaTotal, SomaMarcados;
-        public Form1()
+        public Somador()
         {
             InitializeComponent();
 
@@ -29,9 +29,7 @@ namespace Somador
                 {
                     float v = float.Parse(lstValores.Items[i].ToString());
                     if (lstValores.GetItemChecked(i))
-                    {
                         SomaMarcados += v;
-                    }
 
                     SomaTotal += v;
                 } catch
@@ -45,9 +43,7 @@ namespace Somador
 
             lSomaTotal.Text = "A soma total dos valores é " + SomaTotal;
             if (SomaMarcados != 0)
-            {
                 lSomaMarcados.Text = "A soma sem os valores marcados é " + (SomaTotal - SomaMarcados);
-            }
 
             SomaTotal = 0;
             SomaMarcados = 0;
@@ -63,6 +59,12 @@ namespace Somador
                     break;
                 }
             }
+        }
+
+        private void tValor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                bAdicionar_Click(sender, e);
         }
 
         private void bAdicionar_Click(object sender, EventArgs e)

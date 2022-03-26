@@ -1,7 +1,7 @@
 ﻿
 namespace Somador
 {
-    partial class Form1
+    partial class Somador
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -37,6 +37,7 @@ namespace Somador
             this.lSomaMarcados = new System.Windows.Forms.Label();
             this.bRemover = new System.Windows.Forms.Button();
             this.lErro = new System.Windows.Forms.Label();
+            this.tDica = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bAdicionar
@@ -63,6 +64,7 @@ namespace Somador
             this.tValor.Name = "tValor";
             this.tValor.Size = new System.Drawing.Size(213, 20);
             this.tValor.TabIndex = 3;
+            this.tValor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tValor_KeyDown);
             // 
             // lSomaTotal
             // 
@@ -111,11 +113,21 @@ namespace Somador
             this.lErro.TabIndex = 8;
             this.lErro.Text = "label2";
             // 
-            // Form1
+            // tDica
+            // 
+            this.tDica.AutoSize = true;
+            this.tDica.Location = new System.Drawing.Point(41, 54);
+            this.tDica.Name = "tDica";
+            this.tDica.Size = new System.Drawing.Size(247, 13);
+            this.tDica.TabIndex = 9;
+            this.tDica.Text = "Use \'.\' para separar as casas decimais (Ex.: 45.09).";
+            // 
+            // Somador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 483);
+            this.Controls.Add(this.tDica);
             this.Controls.Add(this.lErro);
             this.Controls.Add(this.bRemover);
             this.Controls.Add(this.lSomaMarcados);
@@ -124,7 +136,7 @@ namespace Somador
             this.Controls.Add(this.tValor);
             this.Controls.Add(this.lstValores);
             this.Controls.Add(this.bAdicionar);
-            this.Name = "Form1";
+            this.Name = "Somador";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,6 +153,7 @@ namespace Somador
         private System.Windows.Forms.Label lSomaMarcados;
         private System.Windows.Forms.Button bRemover;
         private System.Windows.Forms.Label lErro;
+        private System.Windows.Forms.Label tDica;
     }
 }
 
