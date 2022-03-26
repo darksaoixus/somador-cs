@@ -101,12 +101,13 @@ namespace Somador
             this.tDica.AutoSize = true;
             this.tDica.Location = new System.Drawing.Point(41, 54);
             this.tDica.Name = "tDica";
-            this.tDica.Size = new System.Drawing.Size(247, 13);
+            this.tDica.Size = new System.Drawing.Size(286, 13);
             this.tDica.TabIndex = 9;
-            this.tDica.Text = "Use \',\' para separar as casas decimais (Ex.: 45,09).";
+            this.tDica.Text = "Use \',\' (vírgula) para separar as casas decimais. Ex.: 45,09.";
             // 
             // tValor
             // 
+            this.tValor.InterceptArrowKeys = false;
             this.tValor.Location = new System.Drawing.Point(44, 84);
             this.tValor.Name = "tValor";
             this.tValor.Size = new System.Drawing.Size(213, 20);
